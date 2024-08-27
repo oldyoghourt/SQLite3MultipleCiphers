@@ -303,7 +303,7 @@ GenerateKeySQLCipherCipher(void* cipher, BtShared* pBt, char* userPassword, int 
     {
       hmacSalt[j] ^= hmacSaltMask;
     }
-    switch (sqlCipherCipher->m_hmacAlgorithm)
+    switch (sqlCipherCipher->m_kdfAlgorithm)
     {
       case SQLCIPHER_HMAC_ALGORITHM_SHA1:
         fastpbkdf2_hmac_sha1(sqlCipherCipher->m_key, KEYLENGTH_SQLCIPHER,
